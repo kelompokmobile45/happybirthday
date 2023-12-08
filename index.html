@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Single Page Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section id="page1" class="page active">
+        <div class="container">
+            <h1 id="initialHeading"><span class="auto-typed"></span></h1>
+            <img class="profile-img" src="assets\1.png" alt="Profile Image">
+            <a class="btn" href="#" onclick="showPage('page2')">!!!LANJUT!!!</a>
+            <h1><span class="auto-typed1"></span></h1>
+        </div>
+    </section>
+
+    <section id="page2" class="page">
+        <div class="card">
+            <h2>From: <span class="auto-typed3"></span></h2>
+            <h1>To My Father</h1>
+            <p>
+                Semoga panjang umur dan sehat selalu, Apa yang diinginkan dapat tercapai,
+                Semoga tahun depan bisa menjadi kepala sekolah🎉,<br>
+                Terimakasih atas semua kenangan mulai dari kecil hingga sekarang,<br>
+                Sekali lagi kami dari keluarga mengucapkan selamat ulang tahun ke -44🥳🥳
+            </p>
+            <a class="btn" href="#" onclick="showPage('page3')">Next</a>
+        </div>
+    </section>
+
+    <section id="page3" class="page">
+        <div class="card">
+            <h1><span class="auto-typed4"></span></h1>
+            <a class="btn" href="#" onclick="showPage('page4')">Next</a>
+        </div>
+    </section>
+
+    <section id="page4" class="page">
+        <div class="card">
+            <h1>CLICK</h1>
+            <a class="btn" href="https://youtu.be/L1js2UoRDJc?si=3cLqrNbijsGusliJ">THE MOMENT</a>
+            <h1>CLICK</h1>
+        </div>
+    </section>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed1 = new Typed(".auto-typed", {
+            strings: ["HAPPY BIRTHDAY"],
+            typeSpeed: 150,
+            backSpeed: 150,
+            loop: true,
+            showCursor: false
+        });
+        var typed2 = new Typed(".auto-typed1", {
+            strings: ["HAPPY BIRTHDAY"],
+            typeSpeed: 150,
+            backSpeed: 150,
+            loop: true,
+            showCursor: false
+        });
+        var typed3 = new Typed(".auto-typed3", {
+            strings: ["Indra Wardana", "Zara Azalia"],
+            typeSpeed: 150,
+            backSpeed: 150,
+            loop: true,
+            showCursor: false
+        });
+        var typed4 = new Typed(".auto-typed4", {
+            strings: ["Terimakasih telah membuat momen istimewa Semoga harimu penuh kebahagiaan Kami menghargai kehadiran dan dukunganmu"],
+            typeSpeed: 50,
+            backSpeed: 50,
+            loop: false,
+            showCursor: false
+        });
+        function showPage(pageId) {
+            var pages = document.querySelectorAll('.page');
+            pages.forEach(function(page) {
+                page.classList.remove('active');
+            });
+
+            var selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+                
+                if (pageId === 'page3') {
+                    typed4.start();
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
